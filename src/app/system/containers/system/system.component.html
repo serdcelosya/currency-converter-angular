@@ -1,0 +1,6 @@
+<ng-container *ngIf="currencies$ | async as currencies">
+	<app-header [currencies]="currencies"></app-header>
+	<div class="system">
+		<router-outlet></router-outlet>
+	</div>
+</ng-container>
