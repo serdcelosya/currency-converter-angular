@@ -1,0 +1,9 @@
+@import 'src/styles/abstracts/functions';
+
+// base colors
+
+$primary: ("DarkViolet": #715AA3, "Aquamarine": #007D67);
+$secondary: ("DeepBlue": #073B4C, "DeepBlue-800": #37606E, "RoofTerracotta": #A94442, "Cerise": #D9365D);
+$neutral: ("EarthGrey": #63666A, "Selago": #F5F4F5, "White": #FFFFFF);
+
+$colors: map-collect($primary, $secondary, $neutral);
