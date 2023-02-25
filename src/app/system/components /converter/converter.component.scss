@@ -1,3 +1,9 @@
+::ng-deep .currency-select {
+  .mat-mdc-form-field {
+    width: 90px;
+  }
+}
+
 .converter {
   color: white;
 
@@ -15,11 +21,21 @@
 
   &__wrapper {
     background: white;
-    padding: 20px;
+    padding: 40px 20px;
     box-shadow: 0 4px 29px rgb(0 0 0 / 10%);
     border-radius: 2px;
     display: flex;
     gap: 15px;
     justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__hint {
+    color: rgba(93, 112, 121);;
   }
 }

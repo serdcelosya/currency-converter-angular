@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CurrencyService } from '../../services/currency.service';
 import { finalize, Subject, switchMap, takeUntil } from 'rxjs';
 import { Currencies, Rate } from '../../../shared/models';
@@ -20,8 +20,8 @@ export class ConverterComponent implements OnInit {
 		private currencyService: CurrencyService
 	) {
 		this.converterForm = this.formBuilder.group({
-			fromValue: 0,
-			toValue: 0,
+			fromValue: [0, [Validators.required]],
+			toValue: [0, [Validators.required]],
 			fromName: '',
 			toName: '',
 		});
@@ -33,12 +33,14 @@ export class ConverterComponent implements OnInit {
 			toValue: 0,
 			fromName: Currencies.USD,
 			toName: Currencies.UAH,
+			date: '',
 		};
 
 		this.currencyService
 			.convert(this.rate.fromValue, this.rate.fromName, this.rate.toName)
 			.subscribe(rate => {
 				this.rate.toValue = rate.result;
+				this.rate.date = rate.date;
 			});
 	}
 

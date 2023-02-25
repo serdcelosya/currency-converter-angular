@@ -1,7 +1,7 @@
 <div class="converter">
 	<p class="converter__title">Currency Converter</p>
 	<form class="converter__wrapper" [formGroup]="converterForm">
-		<div>
+		<div class="converter__item">
 			<mat-form-field appearance="outline">
 				<mat-label>Amount</mat-label>
 				<input
@@ -10,17 +10,23 @@
 					matInput
 					(focus)="onAmountChange()"
 					type="number" />
+				<mat-error
+					*ngIf="this.converterForm.get('fromValue')?.hasError('required')">
+					Please enter a value
+				</mat-error>
 			</mat-form-field>
-			<mat-form-field appearance="fill">
-				<mat-select formControlName="fromName" [(ngModel)]="rate.fromName">
-					<mat-option *ngFor="let currency of currencies" [value]="currency">
-						{{ currency }}
-					</mat-option>
-				</mat-select>
-			</mat-form-field>
+			<div class="currency-select">
+				<mat-form-field appearance="fill">
+					<mat-select formControlName="fromName" [(ngModel)]="rate.fromName">
+						<mat-option *ngFor="let currency of currencies" [value]="currency">
+							{{ currency }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</div>
 		</div>
 
-		<div>
+		<div class="converter__item">
 			<mat-form-field appearance="outline">
 				<mat-label>Converted to</mat-label>
 				<input
@@ -29,14 +35,23 @@
 					matInput
 					(focus)="onConvertedAmount()"
 					type="number" />
+				<mat-hint class="converter__hint"
+					>Rate is calculated for today {{ rate.date | date }}</mat-hint
+				>
+				<mat-error
+					*ngIf="this.converterForm.get('toValue')?.hasError('required')">
+					Please enter a value
+				</mat-error>
 			</mat-form-field>
-			<mat-form-field appearance="fill">
-				<mat-select formControlName="toName" [(ngModel)]="rate.toName">
-					<mat-option *ngFor="let currency of currencies" [value]="currency">
-						{{ currency }}
-					</mat-option>
-				</mat-select>
-			</mat-form-field>
+			<div class="currency-select">
+				<mat-form-field appearance="fill">
+					<mat-select formControlName="toName" [(ngModel)]="rate.toName">
+						<mat-option *ngFor="let currency of currencies" [value]="currency">
+							{{ currency }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</div>
 		</div>
 	</form>
 </div>

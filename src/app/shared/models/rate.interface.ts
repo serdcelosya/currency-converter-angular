@@ -3,4 +3,5 @@ export interface Rate {
 	toValue: any;
 	fromName: string;
 	toName: string;
+	date?: string;
 }
