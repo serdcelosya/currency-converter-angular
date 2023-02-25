@@ -1,6 +1,6 @@
 import { Currencies } from './currencies.enum';
 
-export interface CurrencyRate {
+export interface CurrencyRateResponse {
 	r030: number;
 	txt: string;
 	rate: number;

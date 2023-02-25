@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { CurrencyRate } from '../../../shared/models';
+import { CurrencyRateResponse } from '../../../shared/models';
 
 @Component({
 	selector: 'app-header',
@@ -8,6 +8,6 @@ import { CurrencyRate } from '../../../shared/models';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-	@Input() currencies: CurrencyRate[];
+	@Input() currencies: CurrencyRateResponse[];
 	constructor() {}
 }

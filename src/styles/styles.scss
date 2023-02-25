@@ -1,6 +1,7 @@
 @import '~normalize.css';
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap');
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 @import 'abstracts/variables';
 @import 'abstracts/functions';
@@ -36,3 +37,6 @@ p {
   margin-block-end: unset;
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

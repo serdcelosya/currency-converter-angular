@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { CurrencyRate, Currencies } from '../../shared/models';
+import {
+	CurrencyRateResponse,
+	Currencies,
+	ConvertedRateResponse,
+} from '../../shared/models';
 
 @Injectable({
 	providedIn: 'root',
@@ -9,9 +13,9 @@ import { CurrencyRate, Currencies } from '../../shared/models';
 export class CurrencyService {
 	constructor(private http: HttpClient) {}
 
-	getCurrencies(): Observable<CurrencyRate[]> {
+	getCurrencies(): Observable<CurrencyRateResponse[]> {
 		return this.http
-			.get<CurrencyRate[]>(
+			.get<CurrencyRateResponse[]>(
 				'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json'
 			)
 			.pipe(
@@ -21,5 +25,15 @@ export class CurrencyService {
 					)
 				)
 			);
+	}
+
+	convert(
+		amount: number,
+		from: string,
+		to: string
+	): Observable<ConvertedRateResponse> {
+		return this.http.get<ConvertedRateResponse>(
+			`https://api.exchangerate.host/convert?from=${from}&to=${to}&amount=${amount}`
+		);
 	}
 }

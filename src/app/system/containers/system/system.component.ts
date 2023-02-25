@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrencyService } from '../../services/currency.service';
 import { Observable } from 'rxjs';
-import { CurrencyRate } from '../../../shared/models';
+import { CurrencyRateResponse } from '../../../shared/models';
 
 @Component({
 	selector: 'app-system',
@@ -9,7 +9,7 @@ import { CurrencyRate } from '../../../shared/models';
 	styleUrls: ['./system.component.scss'],
 })
 export class SystemComponent implements OnInit {
-	currencies$: Observable<CurrencyRate[]>;
+	currencies$: Observable<CurrencyRateResponse[]>;
 	constructor(private currencyService: CurrencyService) {}
 
 	ngOnInit(): void {
