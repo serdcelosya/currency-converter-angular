@@ -1,0 +1,38 @@
+.footer {
+  position: fixed;
+  width: 100%;
+  background: rgba(46, 67, 105);
+  padding: 20px 60px;
+  color: white;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .social {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 42px;
+    opacity: 0.6;
+
+    a {
+      font-size: 20px;
+      text-decoration: none;
+      color: white;
+
+      &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 12px;
+    letter-spacing: 1px;
+    opacity: 0.6;
+  }
+}

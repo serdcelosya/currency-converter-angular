@@ -7,9 +7,10 @@ import { SystemComponent } from './containers';
 import { CurrencyService } from './services/currency.service';
 import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './components /footer/footer.component';
 
 @NgModule({
-	declarations: [SystemComponent, HeaderComponent, ConverterComponent],
+	declarations: [SystemComponent, HeaderComponent, ConverterComponent, FooterComponent],
 	imports: [
 		CommonModule,
 		SystemRoutingModule,
