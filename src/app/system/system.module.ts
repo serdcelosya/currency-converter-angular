@@ -10,7 +10,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './components /footer/footer.component';
 
 @NgModule({
-	declarations: [SystemComponent, HeaderComponent, ConverterComponent, FooterComponent],
+	declarations: [
+		SystemComponent,
+		HeaderComponent,
+		ConverterComponent,
+		FooterComponent,
+	],
 	imports: [
 		CommonModule,
 		SystemRoutingModule,

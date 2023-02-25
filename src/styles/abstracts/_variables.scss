@@ -2,8 +2,20 @@
 
 // base colors
 
-$primary: ("DarkViolet": #715AA3, "Aquamarine": #007D67);
-$secondary: ("DeepBlue": #073B4C, "DeepBlue-800": #37606E, "RoofTerracotta": #A94442, "Cerise": #D9365D);
-$neutral: ("EarthGrey": #63666A, "Selago": #F5F4F5, "White": #FFFFFF);
+$primary: (
+	'DarkViolet': #715aa3,
+	'Aquamarine': #007d67,
+);
+$secondary: (
+	'DeepBlue': #073b4c,
+	'DeepBlue-800': #37606e,
+	'RoofTerracotta': #a94442,
+	'Cerise': #d9365d,
+);
+$neutral: (
+	'EarthGrey': #63666a,
+	'Selago': #f5f4f5,
+	'White': #ffffff,
+);
 
 $colors: map-collect($primary, $secondary, $neutral);
