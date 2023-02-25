@@ -1,5 +1,5 @@
-<ng-container *ngIf="currencies$ | async as currencies">
-	<app-header [currencies]="currencies"></app-header>
+<ng-container *ngIf="currencyRates$ | async as currencyRates">
+	<app-header [currencies]="currencyRates"></app-header>
 	<div class="system">
 		<router-outlet></router-outlet>
 	</div>

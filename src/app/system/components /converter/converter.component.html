@@ -36,7 +36,8 @@
 					(focus)="onConvertedAmount()"
 					type="number" />
 				<mat-hint class="converter__hint"
-					>Rate is calculated for today {{ rate.date | date }}</mat-hint
+					>Currency rate is relevant for
+					{{ rate.date | date : 'medium' }}</mat-hint
 				>
 				<mat-error
 					*ngIf="this.converterForm.get('toValue')?.hasError('required')">

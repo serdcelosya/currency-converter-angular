@@ -9,10 +9,10 @@ import { CurrencyRateResponse } from '../../../shared/models';
 	styleUrls: ['./system.component.scss'],
 })
 export class SystemComponent implements OnInit {
-	currencies$: Observable<CurrencyRateResponse[]>;
+	currencyRates$: Observable<CurrencyRateResponse[]>;
 	constructor(private currencyService: CurrencyService) {}
 
 	ngOnInit(): void {
-		this.currencies$ = this.currencyService.getCurrencies();
+		this.currencyRates$ = this.currencyService.getCurrencies();
 	}
 }
