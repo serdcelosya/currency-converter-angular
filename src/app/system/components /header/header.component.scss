@@ -1,3 +1,5 @@
+@import 'abstracts/mixins';
+
 .header {
   position: sticky;
   margin-bottom: 32px;
@@ -8,16 +10,26 @@
   background: rgba(46, 67, 105);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   padding: 30px 60px;
   color: white;
   line-height: 22px;
   flex-wrap: wrap;
 
+  @include respond(sm) {
+    flex-direction: row;
+    align-items: center;
+  }
+
   &__title {
     letter-spacing: 0.7px;
     font-weight: 600;
     font-size: 20px;
+    margin-bottom: 10px;
+
+    @include respond(sm) {
+      margin-bottom: unset;
+    }
   }
 
   &__rates {
