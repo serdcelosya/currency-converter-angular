@@ -1,0 +1,42 @@
+.not-found {
+	display: flex;
+	justify-content: center;
+	color: white;
+	font-size: 42px;
+	font-weight: 800;
+}
+.not-found__notification {
+	margin-bottom: 30px;
+	&::after {
+		color: rgba(0, 185, 255);
+		content: '.';
+	}
+}
+.not-found__text {
+	margin-bottom: 100px;
+	&::after {
+		color: rgba(0, 185, 255);
+		content: '!';
+	}
+}
+.not-found__error {
+	font-size: 82px;
+	font-weight: 800;
+
+	margin-bottom: 20px;
+}
+
+.thumb {
+	margin: 0;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+}
+
+.not-found__description {
+	font-size: 14px;
+	font-weight: normal;
+}

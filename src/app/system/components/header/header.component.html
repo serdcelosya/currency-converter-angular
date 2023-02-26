@@ -1,0 +1,11 @@
+<header class="header">
+	<p class="header__title">Currency Converter</p>
+	<div class="header__rates">
+		<ng-container *ngFor="let currency of currencies">
+			<p class="header__rate">
+				{{ currency.cc | uppercase }}/UAH
+				<span>{{ currency.rate }}</span>
+			</p>
+		</ng-container>
+	</div>
+</header>
